@@ -2,6 +2,13 @@
     "name": "nodeindacloud",
     "version": "0.0.1",
     "dependencies": {
-        "connect": "2.7.3"
+        "connect": "2.7.3",
+        "nconf": "0.6.7"
+    },
+    "devDependencies": {
+        "wd": "0.0.31"
+    },
+    "scripts": {
+        "test": "node test/selenium.js"
     }
 }

@@ -5,8 +5,9 @@ node_js:
 
 env:
   global:
-  - secure: 'ntNZjsDW+AHndbSOze9DFbNc64T0KK1V48NN2OMjBaH0FxoQxKwI1uDWKMGkPRj+uGHlGy2DqcWNO+IuyFGXDEMclL1yA9D4CKU46zBtP+9npU+/bhKV2vKD4qtWl2dOxVJkNcWHFpuuM5YMIXFBKsWZeIV6P8RyOMNQ9nE9z4w='
-
+  - secure: "ntNZjsDW+AHndbSOze9DFbNc64T0KK1V48NN2OMjBaH0FxoQxKwI1uDWKMGkPRj+uGHlGy2DqcWNO+IuyFGXDEMclL1yA9D4CKU46zBtP+9npU+/bhKV2vKD4qtWl2dOxVJkNcWHFpuuM5YMIXFBKsWZeIV6P8RyOMNQ9nE9z4w="
+  - secure: "kp3nN1eAqS6KPk6uEgUX4sjCd6JbgwE4OeMoluGlrMjIdO7xUdcHSf6eTSDZ\nVbLi88ZIJYEtcn/o1QC+JzY1D3//FayBYjjFm2fT2112agJX0ZY2GBrlXmx6\nNQ4kJ+q8wRe6O8dLDKvaS8bdsBmHyKS2FUJ0JDFsIShJr5bmomY="
+  - secure: "1HQLevn/jyki9424d1bQoOjC1ZENgPRJe5rS4qPEKSJgh6wgzzH/bataSDpl\nQUDYoKPp9/UL8afVbRAPnsgl8RgNcZUszGPKqARRD8Vu7hXXDMMhOwXe9xIl\nQjyMjssljQ24P/NQV9R0J/Qenn2Dx7EaM00puK2GxDEzXWBjJyc="
 after_success:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   - git remote add heroku git@heroku.com:nodeindacloud.git
