@@ -16,5 +16,5 @@ task :deploy_from_travis_to_heroku, [:app] do |t, args|
     sh 'echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config'
     sh 'heroku keys:clear'
     sh 'yes | heroku keys:add'
-    sh 'yes | git push #{app} master'
+    sh "yes | git push #{app} master"
 end
