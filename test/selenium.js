@@ -18,25 +18,16 @@ browser.on('command', function(meth, path){
 });
 
 var desired = {
-  browserName: 'iphone'
-  , version: '5.0'
-  , platform: 'Mac 10.6'
+  browserName: 'firefox'
   , tags: ["examples"]
   , name: "This is an example test"
 }
 
 browser.init(desired, function() {
-  browser.get("http://saucelabs.com/test/guinea-pig", function() {
-    browser.title(function(err, title) {
-      assert.ok(~title.indexOf('I am a page title - Sauce Labs'), 'Wrong title!');
-      browser.elementById('submit', function(err, el) {
-        browser.clickElement(el, function() {
-          browser.eval("window.location.href", function(err, href) {
-            assert.ok(~href.indexOf('guinea'), 'Wrong URL!');
-            browser.quit()
-          })
-        })
-      })
+  browser.get(config.get('seleniumTargetUrl'), function() {
+    browser.eval("window.document.body.innerHTML", function(err, bodyText) {
+        assert.ok(bodyText == 'Hello World', 'Text in body is not "Hello World" but "' + bodyText + '"');
+        browser.quit()
     })
   })
 })
