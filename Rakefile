@@ -6,7 +6,7 @@ task :test_ui, [:host_url] do |t, args|
     sh "node test/selenium.js --seleniumTargetUrl #{args.host_url}"
 end
 
-task :deploy_from_travis_to_heroku, [:app] do
+task :deploy_from_travis_to_heroku, [:app] do |t, args|
     sh 'wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh'
     sh "git remote add heroku git@heroku.com:#{args.app}.git"
     sh 'echo "Host heroku.com" >> ~/.ssh/config'
