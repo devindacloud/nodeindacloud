@@ -7,13 +7,14 @@ task :test_ui, [:host_url] do |t, args|
 end
 
 task :deploy_from_travis_to_heroku, [:app] do |t, args|
+    app = args.app
     sh 'wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh'
-    sh "git remote add heroku git@heroku.com:#{args.app}.git"
+    sh "git remote add #{app} git@heroku.com:#{app}.git"
     sh 'echo "Host heroku.com" >> ~/.ssh/config'
     sh 'echo "   StrictHostKeyChecking no" >> ~/.ssh/config'
     sh 'echo "   CheckHostIP no" >> ~/.ssh/config'
     sh 'echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config'
     sh 'heroku keys:clear'
     sh 'yes | heroku keys:add'
-    sh 'yes | git push heroku master'
+    sh 'yes | git push #{app} master'
 end
